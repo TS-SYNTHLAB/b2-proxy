@@ -1,0 +1,15 @@
+name = "b2-proxy"
+main = "src/worker.ts"
+compatibility_date = "2025-09-23"
+
+[vars]
+UPSTREAM_URL = "https://s3.us-west-004.backblazeb2.com"
+# B2_REGION = "us-west-004"
+# B2_BUCKET = "my-bucket"
+
+# Secrets: use `wrangler secret put B2_KEY_ID` and `wrangler secret put B2_APP_KEY`
+# (non-master application key: https://secure.backblaze.com/app_keys.htm)
+# Optional, to require client authentication:
+#   wrangler secret put PROXY_APP_ID  and  wrangler secret put PROXY_APP_SECRET
+# For local dev, create a .dev.vars file with the same names.
+# Note: if wrangler.jsonc exists, Wrangler uses it instead of this file.

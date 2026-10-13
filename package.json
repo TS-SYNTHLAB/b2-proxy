@@ -1,0 +1,40 @@
+{
+  "name": "b2-proxy",
+  "version": "1.0.0",
+  "description": "Reverse proxy for the Backblaze B2 S3 API behind a custom domain, with presigned URL support. Runs on Node.js (Fastify) or Cloudflare Workers.",
+  "private": true,
+  "type": "module",
+  "keywords": [
+    "backblaze",
+    "b2",
+    "s3",
+    "proxy",
+    "custom-domain",
+    "presigned-url",
+    "cloudflare-workers",
+    "fastify"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.test.json",
+    "test": "tsx test-proxy.ts",
+    "dev:worker": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "fastify": "^5.12.5"
+  },
+  "devDependencies": {
+    "@types/aws4": "^1.11.6",
+    "@types/node": "^26.6.5",
+    "aws4": "^1.13.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "wrangler": "^4.149.0"
+  }
+}
